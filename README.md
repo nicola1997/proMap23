@@ -1,9 +1,7 @@
 # proMap23
 
-Titolo del progetto
-Programma di visualizzazione dati da database MySQL con JavaFX
 
-Descrizione
+Descrizione <br>
 Questo progetto è un'applicazione Java che si connette a un database MySQL e visualizza i dati utilizzando JavaFX per l'interfaccia utente.
 
 L'applicazione è in grado di recuperare i dati da un database MySQL specificato, eseguire query personalizzate e mostrare i risultati in una interfaccia grafica interattiva.
