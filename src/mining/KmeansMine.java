@@ -1,0 +1,5 @@
+package mining;
+
+class KmeansMine {
+
+}
