@@ -1,13 +1,12 @@
 package data;
 
-import java.util.*;
-
 abstract class Attribute {
-	String name;
-	int index;
+	private String name;
+	private int index;
 
-	private Attribute(String name, int index) {
-
+	Attribute(String name, int index) {
+		this.name = name;
+		this.index = index;
 	}
 
 	public String getName() {
@@ -18,6 +17,7 @@ abstract class Attribute {
 		return index;
 	}
 
+	@Override
 	public String toString() {
 		return name;
 	}
