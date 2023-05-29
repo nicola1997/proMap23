@@ -16,8 +16,8 @@ public class DbAccess {
 	private final String SERVER = "localhost";
 	private final String DATABASE = "mapdb";
 	private final int PORT = 3306;
-	private final String USER_ID = "root";
-	private final String PASSWORD = "a.chiariello9";
+	private final String USER_ID = "admin";
+	private final String PASSWORD = "password";
 	private Connection conn;
 
 	public DbAccess() throws DatabaseConnectionException {
