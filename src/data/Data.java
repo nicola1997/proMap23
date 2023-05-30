@@ -1,11 +1,14 @@
 package data;
 
+import java.util.Arrays;
 
 class Data {
 // Le visibilità di classi , attributi e metodi devono essere decise dagli studenti	
 	Object data [][];
 	int numberOfExamples;
 	Attribute attributeSet[];
+	
+	
 	
 	
 	Data(){
@@ -110,38 +113,38 @@ class Data {
 		outLookValues[2]="sunny";
 		attributeSet[0] = new DiscreteAttribute("Outlook",0, outLookValues);
 		
+		
 		// similmente per gli altri attributi
 		
 		
 	}
 	
 	int getNumberOfExamples(){
-		//TO DO
+		return numberOfExamples;
 	}
 	
 	int getNumberOfAttributes(){
-		//TO DO
+		return this.attributeSet.length;
+		
+	}
+	
+	Attribute[] getAttributeSchema() {
+		return this.attributeSet;
 	}
 	
 	
 	
 	Object getAttributeValue(int exampleIndex, int attributeIndex){
-		//TO DO
+		return this.data[exampleIndex][attributeIndex];//TO DO
 	}
 	
-	Attribute getAttribute(int index){
-		//TO DO
-	}
-	
-	
-	public String toString(){
-		//TO DO
 		
-		
+	@Override
+	public String toString() {
+		return "Data [data=" + Arrays.toString(data) + ", numberOfExamples=" + numberOfExamples + ", attributeSet="
+				+ Arrays.toString(attributeSet) + "]";
 	}
 
-
-	
 	public static void main(String args[]){
 		Data trainingSet=new Data();
 		System.out.println(trainingSet);
