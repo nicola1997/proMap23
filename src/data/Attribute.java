@@ -4,9 +4,11 @@ abstract class Attribute {
 	private String name;
 	private int index;
 
-	Attribute(String name, int index) {
-		this.name = name;
-		this.index = index;
+	// costruttore con parametri
+	Attribute(String name,int index) {
+	this.name = name;
+	this.index= index;
+	
 	}
 
 	public String getName() {
@@ -21,5 +23,7 @@ abstract class Attribute {
 	public String toString() {
 		return name;
 	}
+
+	
 
 }
