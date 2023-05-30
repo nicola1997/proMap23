@@ -6,8 +6,10 @@ abstract class Attribute {
 	String name;
 	int index;
 
+	// costruttore con parametri
 	private Attribute(String name, int index) {
-
+		this.name = name;
+		this.index = index;
 	}
 
 	public String getName() {
