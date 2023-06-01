@@ -7,8 +7,6 @@ package keyboardInput;
 //parsing, conversions, and exception handling.
 //********************************************************************
 
-package keyboardinput;
-
 import java.io.*;
 import java.util.*;
 

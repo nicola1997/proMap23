@@ -6,14 +6,14 @@ import java.util.Arrays;
 public class ArraySet {
 	private boolean set[];
 	private int size=0;
-	ArraySet (){
+	public ArraySet (){
 		set=new boolean[50];
 		for(int i=0;i<set.length;i++)
 			set[i]=false;
 	}
 	
 	//return true if add is changing the arraySet
-	boolean add(int i){
+	public boolean add(int i){
 		if(i>=set.length)
 		{
 			//enlarge the set
@@ -31,7 +31,7 @@ public class ArraySet {
 		
 	}
 	
-	boolean delete(int i){
+	public boolean delete(int i){
 		if(i<size){
 			boolean deleted=set[i];
 			set[i]=false;
@@ -48,11 +48,11 @@ public class ArraySet {
 		return false;
 	}
 	
-	boolean get(int i){
+	public boolean get(int i){
 		return set[i];
 	}
 	
-	int[] toArray(){
+	public int[] toArray(){
 		int a[]=new int[0];
 		for(int i=0;i<size;i++){
 			if(get(i)){

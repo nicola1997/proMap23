@@ -9,6 +9,7 @@ class DiscreteAttribute extends Attribute{
 		this.Values=Values;
 	}
 	int frequency(Data data, ArraySet idList, String v) {
+		return 0;
 		
 	}
 	int getNumberOfDistinctValues(String Value){
