@@ -1,5 +1,5 @@
 package mining;
 
-class KmeansMine {
+public class KmeansMine {
 
 }

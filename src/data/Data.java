@@ -2,7 +2,9 @@ package data;
 
 import java.util.Arrays;
 
-class Data {
+import utility.ArraySet;
+
+public class Data {
 // Le visibilità di classi , attributi e metodi devono essere decise dagli studenti	
 	Object data [][];
 	int numberOfExamples;
@@ -11,7 +13,7 @@ class Data {
 	
 	
 	
-	Data(){
+	public Data(){
 		
 		//data
 		
@@ -123,7 +125,7 @@ class Data {
 		return numberOfExamples;
 	}
 	
-	int getNumberOfAttributes(){
+	public int getNumberOfAttributes(){
 		return this.attributeSet.length;
 		
 	}
@@ -134,7 +136,7 @@ class Data {
 	
 	
 	
-	Object getAttributeValue(int exampleIndex, int attributeIndex){
+	public Object getAttributeValue(int exampleIndex, int attributeIndex){
 		return this.data[exampleIndex][attributeIndex];//TO DO
 	}
 	
@@ -150,6 +152,16 @@ class Data {
 		System.out.println(trainingSet);
 		
 		
+	}
+
+	public Object computePrototype(ArraySet clusteredData, Attribute attribute) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getItemSet(int i) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

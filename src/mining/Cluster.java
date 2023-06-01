@@ -1,5 +1,7 @@
 package mining;
-
+import data.Data;
+import data.Tuple;
+import utility.ArraySet;
 
 public class Cluster {
 	private Tuple centroid;
@@ -21,12 +23,12 @@ public class Cluster {
 	}
 	
 	void computeCentroid(Data data){
-		for(int i=0;i<centroid.getLength();i++){
-			centroid.get(i).update(data,clusteredData);
+		/*for(int i=0;i<centroid.getLength();i++){
+			centroid.get(i).update(data,clusteredData); */
 			
 		}
 		
-	}
+	
 	//return true if the tuple is changing cluster
 	boolean addData(int id){
 		return clusteredData.add(id);
