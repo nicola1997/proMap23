@@ -10,6 +10,17 @@ public abstract class Attribute {
 	this.index= index;
 	
 	}
+	
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
 
 	public String getName() {
 		return name;
