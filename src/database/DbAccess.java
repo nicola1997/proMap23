@@ -1,4 +1,4 @@
-package repository;
+package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 class DatabaseConnectionException extends Exception {
+
 }
 
 public class DbAccess {
@@ -18,6 +19,7 @@ public class DbAccess {
 	private final int PORT = 3306;
 	private final String USER_ID = "root";
 	private final String PASSWORD = "password";
+
 	private Connection conn;
 
 	public DbAccess() throws DatabaseConnectionException {
@@ -58,16 +60,17 @@ public class DbAccess {
 
 			// codice SQL: può generare l’eccezione SQLException
 
-			ResultSet r = s
-					.executeQuery("SELECT * " + "FROM MapDB.playtennis as people " + "WHERE " + "(outlook='sunny') ");
+			ResultSet r = s.executeQuery("SELECT * " + "FROM playtennis ");
 
 			while (r.next()) {
+				// Capitalization doesn't matter:
+				System.out.println(r.getString("outlook") + ", " + r.getString("play") );
 				// In alternativa: accesso posizionale
-				
-				  System.out.println( r.getString(2) + ", " + r.getString(1) + ": " +
-				  r.getString(3) ); //NB: nell’accesso posizionale, gli indici delle colonne del
-				  //ResultSet partono da 1
-				 
+				/*
+				 * System.out.println( r.getString(2) + ", " + r.getString(1) + ": " +
+				 * r.getString(3) ); NB: nell’accesso posizionale, gli indici delle colonne del
+				 * ResultSet partono da 1
+				 */
 			}
 			r.close();
 			s.close(); // Also closes ResultSet
@@ -85,17 +88,17 @@ public class DbAccess {
 		try {
 			DbAccess db = new DbAccess();
 			db.exampleQuery();
-			try {
-				db.closeConnection();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			db.closeConnection();
 
-		} catch (DatabaseConnectionException e) {
+		} catch (DatabaseConnectionException | SQLException e) {
 			System.out.println(e.getMessage());
 		}
 
+	}
+
+	public Connection getConnection() {
+		// TODO Auto-generated method stub
+		return this.conn;
 	}
 
 }
