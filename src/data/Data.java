@@ -133,7 +133,7 @@ public class Data {
 
 	}
 
-	int getNumberOfExamples() {
+	public int getNumberOfExamples() {
 		return numberOfExamples;
 	}
 
@@ -142,18 +142,21 @@ public class Data {
 
 	}
 
-	Attribute[] getAttributeSchema() {
+	public Attribute[] getAttributeSchema() {
 		return this.attributeSet;
 	}
 
 	public Object getAttributeValue(int exampleIndex, int attributeIndex) {
-		return this.data[exampleIndex][attributeIndex];// TO DO
+		return this.data[exampleIndex][attributeIndex];
 	}
 
 	@Override
 	public String toString() {
-		return "Data [data=" + Arrays.toString(data) + ", numberOfExamples=" + numberOfExamples + ", attributeSet="
-				+ Arrays.toString(attributeSet) + "]";
+		String result = Arrays.toString(attributeSet) + "\n";
+		for (int i = 0; i < data.length; i++) {
+			result = result + i + ": " + Arrays.toString(data[i]) + "\n";
+		}
+		return result;
 	}
 
 	public static void main(String args[]) {
@@ -163,11 +166,6 @@ public class Data {
 	}
 
 	public Object computePrototype(ArraySet clusteredData, Attribute attribute) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Object getItemSet(int i) {
 		// TODO Auto-generated method stub
 		return null;
 	}

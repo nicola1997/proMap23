@@ -11,15 +11,16 @@ public class DiscreteAttribute extends Attribute {
 		this.Values = Values;
 	}
 
-	int frequency(Data data, ArraySet idList, String v) {
+	public int frequency(Data data, ArraySet idList, String v) {
+		int c = 0;
 		for (int i = 0; i < data.getNumberOfExamples(); i++) {
-			for (int j = 0; j < 1; j++) {
-				if (v.equals(data.getAttributeValue(i, j))) {
-					return 1;
-				}
+
+			if (v.equals(data.getAttributeValue(i,super.getIndex()))) {				
+				idList.add(i);
+				c++;
 			}
 		}
-		return 0;
+		return c;
 	}
 
 	int getNumberOfDistinctValues(String Value) {

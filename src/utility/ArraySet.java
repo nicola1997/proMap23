@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArraySet {
 	private boolean set[];
-	private int size = 0;
+	private int size = 0; // n di true
 
 	public ArraySet() {
 		set = new boolean[50];
@@ -13,7 +13,7 @@ public class ArraySet {
 	}
 
 	// return true if add is changing the arraySet
-	public boolean add(int i) {
+	public boolean add(int i) { // add un true in pos i
 		if (i >= set.length) {
 			// enlarge the set
 			boolean temp[] = new boolean[set.length * 2];
@@ -29,7 +29,7 @@ public class ArraySet {
 
 	}
 
-	public boolean delete(int i) {
+	public boolean delete(int i) { // delete un true in pos i
 		if (i < size) {
 			boolean deleted = set[i];
 			set[i] = false;
@@ -63,4 +63,10 @@ public class ArraySet {
 		}
 		return a;
 	}
+
+	@Override
+	public String toString() {
+		return "ArraySet [set=" + Arrays.toString(set) + ", size=" + size + "]";
+	}
+
 }

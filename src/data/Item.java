@@ -1,30 +1,34 @@
 package data;
+
 import utility.ArraySet;
 
-abstract class Item {
-	Attribute attribute;
-	Object value;
-	//costruttore con parametri
-	Item(Attribute attribute,Object value) {
+public abstract class Item {
+	private Attribute attribute;
+	private Object value;
+
+	// costruttore con parametri
+	Item(Attribute attribute, Object value) {
 		this.attribute = attribute;
-		this.value= value;
+		this.value = value;
 	}
+
 	public Attribute getAttribute() {
 		return attribute;
 	}
+
 	public Object getValue() {
 		return value;
 	}
+
 	@Override
 	public String toString() {
-		return "Item [value=" + value + "]";
+		return "value";
 	}
+
 	abstract double distance(Object a);
 
-	void update(Data data, ArraySet clusteredData){
-		value =  data.computePrototype(clusteredData,attribute);
+	public void update(Data data, ArraySet clusteredData) {
+		this.value = data.computePrototype(clusteredData, attribute);
 	}
 
-
 }
-
