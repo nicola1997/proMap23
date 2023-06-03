@@ -31,7 +31,7 @@ public class Tuple {
 	public String avgDistance(Data data, int[] array) {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	} 
 
 	
 }
