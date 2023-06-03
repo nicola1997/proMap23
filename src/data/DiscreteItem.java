@@ -11,6 +11,5 @@ class DiscreteItem extends Item {
 		} else {
 			return 1;
 		}
-
 	}
 }
