@@ -1,6 +1,9 @@
 package data;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 import utility.ArraySet;
 
@@ -165,7 +168,75 @@ public class Data {
 
 	}
 
-	public Object computePrototype(ArraySet clusteredData, Attribute attribute) {
+	Object computePrototype(ArraySet idList, Attribute attribute) {
+
+		return computePrototype(idList, (DiscreteAttribute) attribute);
+
+	}
+
+	/*
+	 * public String computePrototype(ArraySet<Integer> idList, DiscreteAttribute
+	 * attribute) { HashMap<String, Integer> frequencies = new HashMap<>();
+	 * 
+	 * // Calcola le frequenze dei valori dell'attributo for (int i = 0; i <
+	 * idList.size(); i++) { int id = idList.get(i); String value =
+	 * attribute.getValue(id); frequencies.put(value,
+	 * frequencies.getOrDefault(value, 0) + 1); }
+	 * 
+	 * 
+	 * // Trova il valore più frequente String mostFrequentValue = null; int
+	 * maxFrequency = 0;
+	 * 
+	 * for( Map.Entry<String, Integer> entry:frequencies.entrySet()) { String value
+	 * = entry.getKey(); int frequency = entry.getValue();
+	 * 
+	 * if (frequency > maxFrequency) { mostFrequentValue = value; maxFrequency =
+	 * frequency; } }
+	 * 
+	 * return mostFrequentValue; }
+	 */
+
+	/*
+	 * public Tuple getItemSet(int index) { Tuple tuple = new
+	 * Tuple(explanatorySet.length); for (int i = 0; i < explanatorySet.length; i++)
+	 * tuple.add(new DiscreteItem(explanatorySet[i], (String) data[index][i]), i);
+	 * return tuple;
+	 * 
+	 * }
+	 */
+	public int[] simpling(int k) {
+		int centroidIndexes[] = new int[k];
+		// choose k random different centroids in data.
+		Random rand = new Random();
+		rand.setSeed(System.currentTimeMillis());
+		for (int i = 0; i < k; i++) {
+			boolean found = false;
+			int c;
+			do {
+				found = false;
+				c = rand.nextInt(getNumberOfExamples());
+				// verify that centroid[c] is not equal to a centroide
+				// already stored in CentroidIndexes
+				for (int j = 0; j < i; j++)
+					if (compare(centroidIndexes[j], c)) {
+						found = true;
+						break;
+					}
+			} while (found);
+			centroidIndexes[i] = c;
+		}
+		return centroidIndexes;
+
+	}
+
+	private boolean compare(int i, int j) { // da provare
+		if (data[i] == data[j]) {
+			return true;
+		}
+		return false;
+	}
+
+	public Tuple getItemSet(int i) {
 		// TODO Auto-generated method stub
 		return null;
 	}

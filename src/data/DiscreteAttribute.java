@@ -32,4 +32,9 @@ public class DiscreteAttribute extends Attribute {
 		return Values;
 	}
 
+	public String getValue(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
